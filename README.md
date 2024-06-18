@@ -21,3 +21,8 @@ Ref : [install-jenkins-using-docker](https://medium.com/@eloufirhatim/install-je
 `docker run -p 8081:8081 --name nexus -v /your/home/nexus:/nexus-data sonatype/nexus3`
 
 Ref: [install-sonatype-nexus-using-docker](https://ahgh.medium.com/how-to-setup-sonatype-nexus-3-repository-manager-using-docker-7ff89bc311ce)
+
+### Network
+
+`docker network inspect bridge`
+
