@@ -20,7 +20,7 @@ pipeline {
         NEXUS_URL = 'http://172.17.0.3:8081/repository/'
         NEXUS_REPO_PATH = 'mlops/'
         NEXUS_USERNAME = 'admin'
-        NEXUS_PASSWORD = credentials('ae97292e-b285-4785-a415-d87304c6a51d')
+        NEXUS_PASSWORD = 'admin'
     }
 
     stages {
@@ -128,27 +128,35 @@ pipeline {
         }
 
         stage('Upload Trained Mode to Nexus') {
-                steps {
-                    script {
-                        // Retrieve the password from Jenkins secret text credentials
-                        withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
-                            def remote = [:]
-                            remote.name = 'test'
-                            remote.host = SSH_SERVER
-                            remote.user = SSH_USER
-                            remote.password = SSH_PASS
-                            remote.allowAnyHosts = true
+            steps {
+                script {
+                    // Retrieve the password from Jenkins secret text credentials
+                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                        def remote = [:]
+                        remote.name = 'test'
+                        remote.host = SSH_SERVER
+                        remote.user = SSH_USER
+                        remote.password = SSH_PASS
+                        remote.allowAnyHosts = true
 
-                            // Construct the upload URL
-                            def uploadUrl = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/text_classification_cnn_model.h5"
+                        // Construct the upload URL
+                        def uploadUrl = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/text_classification_cnn_model.h5"
 
-                            // Use curl to upload the file to Nexus
-                            sshCommand remote: remote, command: """
-                                curl -v -u admin:admin --upload-file ${MODEL_FILE} ${uploadUrl}
-                            """
-                        }
+                        // Use curl to upload the file to Nexus
+                        sshCommand remote: remote, command: """
+                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${MODEL_FILE} ${uploadUrl}
+                        """
                     }
                 }
             }
+        }
+    }
+
+    post {
+        always {
+            script {
+                echo "Completed all stages."
+            }
+        }
     }
 }
