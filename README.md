@@ -2,27 +2,58 @@
 
 # Concept
 
-## Prepare
+## Prepare for MLOps
 
-### Jenkins
+### Setup Jenkins.srv
 
-`docker pull jenkins/jenkins`
+- `docker pull jenkins/jenkins`
 
-`docker run -p 8080:8080 -p 50000:50000 -v /your/home/jenkins:/var/jenkins_home jenkins/jenkins`
+- `docker run -p 8080:8080 -p 50000:50000 --name jenkins-srv -v /your/home/jenkins:/var/jenkins_home jenkins/jenkins`
 
 Ref : [install-jenkins-using-docker](https://medium.com/@eloufirhatim/install-jenkins-using-docker-e76f41f79682)
 
-### Nexus
+### Setup Nexus.srv
 
-`docker pull sonatype/nexus3`
+- `docker pull sonatype/nexus3`
 
-`docker volume create --name nexus-data`
+- `docker volume create --name nexus-data`
 
-`docker run -p 8081:8081 --name nexus -v /your/home/nexus:/nexus-data sonatype/nexus3`
+- `docker run -p 8081:8081 --name nexus-srv -v /your/home/nexus:/nexus-data sonatype/nexus3`
 
 Ref: [install-sonatype-nexus-using-docker](https://ahgh.medium.com/how-to-setup-sonatype-nexus-3-repository-manager-using-docker-7ff89bc311ce)
 
-### Network
+### Setup Ubuntu-Train.srv
 
-`docker network inspect bridge`
+- `docker pull takeyamajp/ubuntu-sshd`
 
+- `docker run --name ubuntu-train-srv -v /your/home/ubutu-train:/mnt/train-data -e TZ=Asia/Tokyo -e ROOT_PASSWORD=root -p 2222:22 takeyamajp/ubuntu-sshd`
+
+Ref: [ubuntu-sshd](https://hub.docker.com/r/takeyamajp/ubuntu-sshd)
+
+### Docker Network Check
+
+- `docker network inspect bridge`
+
+### Install Dependences
+
+#### On Jenkins.srv
+
+Install ssh-steps plugins
+
+`Dashboard > Manage Jenkins > Plugins > Available plugins > SSH Pipeline Steps`
+
+`Dashboard > Manage Jenkins > Credentials > System > Global credentials (unrestricted) > Add Credentials > Kind (Secret Text) for password of Ubuntu-Train.srv`
+
+#### On Ubuntu-Train.srv
+
+Install Python3.12 & Git
+
+- `ssh root@127.0.0.1 -p 2222`
+
+- `apt update && apt install software-properties-common -y`
+
+- `add-apt-repository ppa:deadsnakes/ppa && apt update && apt install python3.12 -y && apt install git -y`
+
+- `/usr/bin/python3.12 --version`
+
+- `git --version`
