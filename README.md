@@ -44,16 +44,20 @@ Install ssh-steps plugins
 
 `Dashboard > Manage Jenkins > Credentials > System > Global credentials (unrestricted) > Add Credentials > Kind (Secret Text) for password of Ubuntu-Train.srv`
 
+`Dashboard > Manage Jenkins > Credentials > System > Global credentials (unrestricted) > Add Credentials > Kind (Secret Text) for password of Nexus.srv`
+
 #### On Ubuntu-Train.srv
 
-Install Python3.12 & Git
+Install Curl & PyPip & Git
 
 - `ssh root@127.0.0.1 -p 2222`
 
-- `apt update && apt install software-properties-common -y`
+- `apt update && apt install python3-pip -y && apt install git -y && apt install curl -y`
 
-- `add-apt-repository ppa:deadsnakes/ppa && apt update && apt install python3.12 -y && apt install git -y`
+- `/usr/bin/python3 --version`
 
-- `/usr/bin/python3.12 --version`
-
+- `pip3 --version`
+  
 - `git --version`
+
+
