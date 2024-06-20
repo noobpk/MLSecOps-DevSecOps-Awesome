@@ -1,4 +1,4 @@
-# MLOps Awesome
+# MLOps - DevSecOps - Awesome
 
 # Concept
 

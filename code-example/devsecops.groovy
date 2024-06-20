@@ -6,8 +6,8 @@ pipeline {
         SSH_SERVER = '172.17.0.4'
         SSH_USER = 'root'
         CREDENTIALS_ID = '7458c9b4-2e01-4ad5-919f-e5e518f8f3ae'
-        GIT_REPO_URL = 'https://github.com/noobpk/MLOps-Awesome.git'
-        GIT_CLONE_DIR = '/tmp/MLOps-Awesome'
+        GIT_REPO_URL = 'https://github.com/noobpk/MLOps-DevSecOps-Awesome.git'
+        GIT_CLONE_DIR = '/tmp/MLOps-DevSecOps-Awesome'
         //Nexus
         MODEL_FILE = 'text_classification_cnn_model.h5'
         ENCODE_FILE = 'label_encoder.pickle'
@@ -64,7 +64,7 @@ pipeline {
 
                         // Download artifact
                         sshCommand remote: remote, command: """
-                        cd ${GIT_CLONE_DIR}/code-example/image
+                        cd ${GIT_CLONE_DIR}/code-example/docker-image
                         wget -O ${MODEL_FILE} ${downloadUrl_0}
                         wget -O ${ENCODE_FILE} ${downloadUrl_1}
                         wget -O ${TOKENIZE_FILE} ${downloadUrl_2}
@@ -89,7 +89,7 @@ pipeline {
                         // Install requirements.txt
                         sshCommand remote: remote, command: """
                         curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
-                        cd ${GIT_CLONE_DIR}/code-example/image
+                        cd ${GIT_CLONE_DIR}/code-example/docker-image
                         horusec start -p="./" -e="true"
                         """
                     }

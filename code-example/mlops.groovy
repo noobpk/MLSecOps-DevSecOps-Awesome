@@ -13,8 +13,8 @@ pipeline {
         FILE2_NAME = 'dataset-train.csv'
         REMOTE_FILE1_PATH = "${REMOTE_DIR}/${FILE1_NAME}"
         REMOTE_FILE2_PATH = "${REMOTE_DIR}/${FILE2_NAME}"
-        GIT_REPO_URL = 'https://github.com/noobpk/MLOps-Awesome.git'
-        GIT_CLONE_DIR = '/tmp/MLOps-Awesome'
+        GIT_REPO_URL = 'https://github.com/noobpk/MLOps-DevSecOps-Awesome.git'
+        GIT_CLONE_DIR = '/tmp/MLOps-DevSecOps-Awesome'
         //Neuxs
         MODEL_FILE = '/tmp/model/text_classification_cnn_model.h5'
         ENCODE_FILE = '/tmp/model/label_encoder.pickle'
