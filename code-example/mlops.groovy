@@ -158,5 +158,18 @@ pipeline {
                 echo "Completed all stages."
             }
         }
+
+        success {
+            script {
+                // Trigger Job DevSecOps and pass the build number of Job MLOps
+                def jobBBuild = build job: 'DevSecOps', // Replace 'Job_B' with the actual name of Job B
+                                parameters: [
+                                      string(name: 'JOB_MLOPS_BUILD_NUMBER', value: "${currentBuild.number}")
+                                ]
+
+                // Print information about the triggered build
+                echo "Triggered Job DevSecOps with build number: ${jobBBuild.number}"
+            }
+        }
     }
 }
