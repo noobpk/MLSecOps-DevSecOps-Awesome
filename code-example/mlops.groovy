@@ -17,6 +17,8 @@ pipeline {
         GIT_CLONE_DIR = '/tmp/MLOps-Awesome'
         //Neuxs
         MODEL_FILE = '/tmp/model/text_classification_cnn_model.h5'
+        ENCODE_FILE = '/tmp/model/label_encoder.pickle'
+        TOKENIZE_FILE = '/tmp/model/tokenizer.pickle'
         NEXUS_URL = 'http://172.17.0.3:8081/repository/'
         NEXUS_REPO_PATH = 'mlops/'
         NEXUS_USERNAME = 'admin'
@@ -140,11 +142,14 @@ pipeline {
                         remote.allowAnyHosts = true
 
                         // Construct the upload URL
-                        def uploadUrl = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/text_classification_cnn_model.h5"
-
+                        def uploadUrl_0 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/text_classification_cnn_model.h5"
+                        def uploadUrl_1 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/label_encoder.pickle"
+                        def uploadUrl_2 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/tokenizer.pickle"
                         // Use curl to upload the file to Nexus
                         sshCommand remote: remote, command: """
-                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${MODEL_FILE} ${uploadUrl}
+                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${MODEL_FILE} ${uploadUrl_0}
+                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${ENCODE_FILE} ${uploadUrl_1}
+                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${TOKENIZE_FILE} ${uploadUrl_2}
                         """
                     }
                 }
