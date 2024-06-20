@@ -52,7 +52,7 @@ Install Curl & PyPip & Git
 
 - `ssh root@127.0.0.1 -p 2222`
 
-- `apt update && apt install python3-pip -y && apt install git -y && apt install curl -y`
+- `apt update && apt install python3-pip -y && apt install git -y && apt install curl -y && apt install jq -y`
 
 - `/usr/bin/python3 --version`
 
