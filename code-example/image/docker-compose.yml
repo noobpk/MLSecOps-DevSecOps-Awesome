@@ -1,0 +1,10 @@
+version: "3"
+
+services:
+  text-classification-cnn-model-serve:
+    image: text-classification-cnn-model
+    build: .
+    ports:
+      - "5000:443"
+    container_name: g-wvd-serve
+    restart: unless-stopped
