@@ -61,13 +61,12 @@ pipeline {
                         def downloadUrl_0 = "${NEXUS_URL}${NEXUS_REPO_PATH}${params.JOB_MLOPS_BUILD_NUMBER}/text_classification_cnn_model.h5"
                         def downloadUrl_1 = "${NEXUS_URL}${NEXUS_REPO_PATH}${params.JOB_MLOPS_BUILD_NUMBER}/label_encoder.pickle"
                         def downloadUrl_2 = "${NEXUS_URL}${NEXUS_REPO_PATH}${params.JOB_MLOPS_BUILD_NUMBER}/tokenizer.pickle"
-
+                        def FILE_PATH = "${GIT_CLONE_DIR}/code-example/docker-image/"
                         // Download artifact
                         sshCommand remote: remote, command: """
-                        cd ${GIT_CLONE_DIR}/code-example/docker-image
-                        wget -O ${MODEL_FILE} ${downloadUrl_0}
-                        wget -O ${ENCODE_FILE} ${downloadUrl_1}
-                        wget -O ${TOKENIZE_FILE} ${downloadUrl_2}
+                        wget -O ${FILE_PATH}${MODEL_FILE} ${downloadUrl_0}
+                        wget -O ${FILE_PATH}${ENCODE_FILE} ${downloadUrl_1}
+                        wget -O ${FILE_PATH}${TOKENIZE_FILE} ${downloadUrl_2}
                         """
                     }
                 }
@@ -90,7 +89,7 @@ pipeline {
                         sshCommand remote: remote, command: """
                         curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
                         cd ${GIT_CLONE_DIR}/code-example/docker-image
-                        horusec start -p="./" -e="true"
+                        /root/horusec start -p "./" -e="true" --disable-docker="true"
                         """
                     }
                 }
