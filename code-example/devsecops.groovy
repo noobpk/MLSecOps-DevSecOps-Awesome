@@ -20,9 +20,9 @@ pipeline {
         NEXUS_PASSWORD = 'admin'
         IMAGE_EXPORT_FILE = 'text-classification-cnn-model.tar'
         //Ubuntu-Deploy
-        SSH_SERVER_2 = '172.17.0.4'
+        SSH_SERVER_2 = '172.17.0.6'
         SSH_USER_2 = 'root'
-        CREDENTIALS_ID_2 = '7458c9b4-2e01-4ad5-919f-e5e518f8f3ae'
+        CREDENTIALS_ID_2 = 'cdd71ad8-0308-4bb6-98b0-c9debcb955ed'
     }
 
     parameters {
@@ -198,12 +198,12 @@ pipeline {
             steps {
                 script {
                     // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                    withCredentials([string(credentialsId: CREDENTIALS_ID_2, variable: 'SSH_PASS_2')]) {
                         def remote = [:]
                         remote.name = 'test'
-                        remote.host = SSH_SERVER
-                        remote.user = SSH_USER
-                        remote.password = SSH_PASS
+                        remote.host = SSH_SERVER_2
+                        remote.user = SSH_USER_2
+                        remote.password = SSH_PASS_2
                         remote.allowAnyHosts = true
 
                         // Construct the download URL
