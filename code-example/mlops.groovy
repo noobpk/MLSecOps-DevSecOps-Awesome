@@ -32,7 +32,7 @@ pipeline {
                     // Retrieve the password from Jenkins credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
-                        remote.name = 'test'
+                        remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
                         remote.user = SSH_USER
                         remote.password = SSH_PASS
@@ -53,7 +53,7 @@ pipeline {
                     // Retrieve the password from Jenkins secret text credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
-                        remote.name = 'test'
+                        remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
                         remote.user = SSH_USER
                         remote.password = SSH_PASS
@@ -80,7 +80,7 @@ pipeline {
                     // Retrieve the password from Jenkins secret text credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
-                        remote.name = 'test'
+                        remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
                         remote.user = SSH_USER
                         remote.password = SSH_PASS
@@ -102,7 +102,7 @@ pipeline {
                     // Retrieve the password from Jenkins secret text credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
-                        remote.name = 'test'
+                        remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
                         remote.user = SSH_USER
                         remote.password = SSH_PASS
@@ -135,7 +135,7 @@ pipeline {
                     // Retrieve the password from Jenkins secret text credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
-                        remote.name = 'test'
+                        remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
                         remote.user = SSH_USER
                         remote.password = SSH_PASS
