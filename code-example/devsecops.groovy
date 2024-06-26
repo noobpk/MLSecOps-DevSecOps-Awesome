@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         //Ubuntu-Train
-        SSH_SERVER = '172.17.0.4'
+        SSH_SERVER = '172.17.0.3'
         SSH_USER = 'root'
         CREDENTIALS_ID = '7458c9b4-2e01-4ad5-919f-e5e518f8f3ae'
         IMAGE_DIR = '/tmp/image/'
@@ -13,16 +13,14 @@ pipeline {
         MODEL_FILE = 'text_classification_cnn_model.h5'
         ENCODE_FILE = 'label_encoder.pickle'
         TOKENIZE_FILE = 'tokenizer.pickle'
-        NEXUS_URL = 'http://172.17.0.3:8081/repository/'
+        NEXUS_URL = 'http://172.17.0.4:8081/repository/'
         NEXUS_REPO_PATH_MLOPS = 'mlops/'
         NEXUS_REPO_PATH_DEVSECOPS = 'devsecops/'
         NEXUS_USERNAME = 'admin'
         NEXUS_PASSWORD = 'admin'
         IMAGE_EXPORT_FILE = 'text-classification-cnn-model.tar'
         //Ubuntu-Deploy
-        SSH_SERVER_2 = '172.17.0.6'
-        SSH_USER_2 = 'root'
-        CREDENTIALS_ID_2 = 'cdd71ad8-0308-4bb6-98b0-c9debcb955ed'
+        APP_URL = 'http://172.17.0.2:5000'
     }
 
     parameters {
@@ -107,17 +105,26 @@ pipeline {
         stage('Quality Gate') {
             steps {
                 script {
-                    // Manual approval step
-                    def userInput = input(
-                        id: 'Proceed', message: 'Do you want to proceed with the next stage?',
-                        parameters: [
-                            booleanParam(defaultValue: true, description: '', name: 'Proceed')
-                        ]
-                    )
+                    // Manual approval step with 2-minute timeout
+                    def userInput = null
+                    try {
+                        timeout(time: 2, unit: 'MINUTES') {
+                            userInput = input(
+                                id: 'Proceed', message: 'Do you want to proceed with the next stage?',
+                                parameters: [
+                                    booleanParam(defaultValue: true, description: '', name: 'Proceed')
+                                ]
+                            )
+                        }
+                    } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException e) {
+                        echo "Timeout reached. Automatically proceeding to the next stage."
+                    }
 
                     // Check user input
-                    if (userInput) {
+                    if (userInput != null && userInput) {
                         echo "User chose to proceed."
+                    } else if (userInput == null) {
+                        echo "No user input received. Proceeding automatically due to timeout."
                     } else {
                         error "Pipeline aborted by user."
                     }
@@ -148,22 +155,50 @@ pipeline {
             }
         }
 
-        stage('Scan Docker Image') {
+        stage('Analysis Docker Image') {
             steps {
                 script {
-                    // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
-                        def remote = [:]
-                        remote.name = 'Ubuntu-Train'
-                        remote.host = SSH_SERVER
-                        remote.user = SSH_USER
-                        remote.password = SSH_PASS
-                        remote.allowAnyHosts = true
+                    // Add a timeout for the user input prompt
+                    def skipStage = false
+                    try {
+                        timeout(time: 2, unit: 'MINUTES') {
+                            skipStage = input(
+                                id: 'SkipAnalysis', message: 'Do you want to skip the Analysis Docker Image stage?',
+                                parameters: [
+                                    booleanParam(defaultValue: true, description: '', name: 'Skip')
+                                ]
+                            )
+                        }
+                    } catch (org.jenkinsci.plugins.workflow.steps.FlowInterruptedException e) {
+                        echo "Timeout reached for user input. Proceeding without skipping the stage."
+                    }
 
-                        // Scan docker image
-                        sshCommand remote: remote, command: """
-                        trivy image text-classification-cnn-model:${currentBuild.number} --scanners vuln
-                        """
+                    // If user chooses to skip, print a message and mark the stage as successful
+                    if (skipStage != null && skipStage) {
+                        echo "Skipping the Analysis Docker Image stage."
+                        return
+                    } else if(skipStage == null) {
+                        echo "No user input received. Proceeding automatically due to timeout."
+                        return
+                    } else {
+                        // Retrieve the password from Jenkins secret text credentials
+                        withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                            def remote = [:]
+                            remote.name = 'Ubuntu-Train'
+                            remote.host = SSH_SERVER
+                            remote.user = SSH_USER
+                            remote.password = SSH_PASS
+                            remote.allowAnyHosts = true
+
+                            // Analysi docker image with trivy
+                            sshCommand remote: remote, command: """
+                            trivy image text-classification-cnn-model:${currentBuild.number} --scanners vuln --timeout 10m
+                            """
+                            // Analysi docker image with docker scout
+                            sshCommand remote: remote, command: """
+                            docker scout cves text-classification-cnn-model:${currentBuild.number}
+                            """
+                        }
                     }
                 }
             }
@@ -185,9 +220,12 @@ pipeline {
                         def uploadUrl_0 = "${NEXUS_URL}${NEXUS_REPO_PATH_DEVSECOPS}${env.BUILD_NUMBER}/${IMAGE_EXPORT_FILE}"
 
                         // Export image and Upload image to nexus
+                        sshCommand remote: remote, command: "mkdir -p ${IMAGE_DIR}"
                         sshCommand remote: remote, command: """
-                        docker save -o ${IMAGE_DIR}${IMAGE_EXPORT_FILE} text-classification-cnn-model:${currentBuild.number}
-                        curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${IMAGE_DIR}${IMAGE_EXPORT_FILE} ${uploadUrl_0}
+                        echo "docker save -o ${IMAGE_DIR}${IMAGE_EXPORT_FILE} text-classification-cnn-model:${currentBuild.number}"
+                        """
+                        sshCommand remote: remote, command: """
+                        echo "curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${IMAGE_DIR}${IMAGE_EXPORT_FILE} ${uploadUrl_0}"
                         """
                     }
                 }
@@ -198,12 +236,12 @@ pipeline {
             steps {
                 script {
                     // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID_2, variable: 'SSH_PASS_2')]) {
+                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
                         remote.name = 'Ubuntu-Deploy'
-                        remote.host = SSH_SERVER_2
-                        remote.user = SSH_USER_2
-                        remote.password = SSH_PASS_2
+                        remote.host = SSH_SERVER
+                        remote.user = SSH_USER
+                        remote.password = SSH_PASS
                         remote.allowAnyHosts = true
 
                         // Construct the download URL
@@ -211,23 +249,49 @@ pipeline {
 
                         // Load image and run image
                         sshCommand remote: remote, command: """
-                        wget -O ${IMAGE_DIR}${IMAGE_EXPORT_FILE} ${downloadUrl_0}
-                        docker load -i  ${IMAGE_DIR}${IMAGE_EXPORT_FILE}
-                        docker run --name text-classification-cnn-model -p 5000:443 --rm
+                        echo "wget -O ${IMAGE_DIR}${IMAGE_EXPORT_FILE} ${downloadUrl_0}"
+                        """
+                        // // Load image
+                        sshCommand remote: remote, command: """
+                        echo "docker load -i  ${IMAGE_DIR}${IMAGE_EXPORT_FILE}"
+                        """
+                        // Run image
+                        sshCommand remote: remote, command: """
+                        docker run -d --name text-classification-cnn-model -p 5000:443 --rm text-classification-cnn-model
                         """
                     }
                 }
             }
         }
 
-        stage('Use Job MLOPS Build Number') {
+        stage('Health Check') {
             steps {
                 script {
-                    // Use the build number of Job A
-                    echo "Received build number of Job A: ${params.JOB_MLOPS_BUILD_NUMBER}"
+                    def curlCommand = 'curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" -d \'{"text": "Sample text for prediction"}\' ${APP_URL}/predict'
+                    echo "Executing curl command: ${curlCommand}"
+
+                    def responseCode = sh(script: curlCommand, returnStdout: true).trim()
+                    echo "Response code received: ${responseCode}"
                     
-                    // Your steps that use the build number of Job A
+                    if (responseCode.startsWith('200')) {
+                        echo 'Health Check Successful'
+                    } else {
+                        error 'Health Check Failed'
+                    }
                 }
+            }
+        }
+    }
+
+    post {
+        always {
+            script {
+                echo "Completed all stages."
+            }
+        }
+        failure {
+            script {
+                echo "Pipeline failed."
             }
         }
     }
