@@ -50,7 +50,7 @@ model.add(Dense(len(encoder.classes_), activation="softmax"))
 model.compile(optimizer="adam", loss="categorical_crossentropy", metrics=["accuracy"])
 
 # Train the model
-history = model.fit(X_train, y_train, epochs=2, batch_size=32, validation_split=0.2)
+history = model.fit(X_train, y_train, epochs=1, batch_size=32, validation_split=0.2)
 
 # Save the model
 model.save("/tmp/model/text_classification_cnn_model.h5")

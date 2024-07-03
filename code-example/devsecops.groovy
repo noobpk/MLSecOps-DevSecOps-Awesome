@@ -27,9 +27,10 @@ pipeline {
     }
 
     stages {
-        stage('Clone Git Repository') {
+        stage('Fetch Git Repository') {
             steps {
                 script {
+                    git url: ${GIT_REPO_URL}, branch: "main"
                     // Retrieve the password from Jenkins secret text credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
@@ -78,22 +79,22 @@ pipeline {
             }
         }
 
-        // stage('SonarQube Code Analysis') {
-        //     environment {
-        //         scannerHome = tool 'Sonar'
-        //     }
-        //     steps {
-        //         script {
-        //             withSonarQubeEnv('Sonar') {
-        //                 sh "${scannerHome}/bin/sonar-scanner \
-        //                     -Dsonar.projectKey=<project-key> \
-        //                     -Dsonar.projectName=<project-name> \
-        //                     -Dsonar.projectVersion=<project-version> \
-        //                     -Dsonar.sources=<project-path>"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('SonarQube Code Analysis') {
+            environment {
+                scannerHome = tool 'Sonar'
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('Sonar') {
+                        sh "${scannerHome}/bin/sonar-scanner \
+                            -Dsonar.projectKey=MLOps-DevSecOps-Awesome \
+                            -Dsonar.projectName=MLOps-DevSecOps-Awesome \
+                            -Dsonar.projectVersion=1.0 \
+                            -Dsonar.sources=."
+                    }
+                }
+            }
+        }
 
         stage('Static analysis security testing') {
             steps {
@@ -290,6 +291,9 @@ pipeline {
         stage('Health Check') {
             steps {
                 script {
+                    // Adding a delay of 2 minutes
+                    sleep time: 2, unit: 'MINUTES'
+                    
                     def curlCommand = 'curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" -d \'{"text": "Sample text for prediction"}\' ${APP_URL}/predict'
                     echo "Executing curl command: ${curlCommand}"
 

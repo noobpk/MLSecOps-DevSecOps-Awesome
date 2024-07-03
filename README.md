@@ -30,6 +30,12 @@ Ref: [install-sonatype-nexus-using-docker](https://ahgh.medium.com/how-to-setup-
 
 Ref: [ubuntu-sshd](https://hub.docker.com/r/takeyamajp/ubuntu-sshd)
 
+### Setup SonarQube.srv
+
+- `docker pull library/sonarqube:latest`
+
+- `docker run --name sonarqube -d -p 9000:9000 sonarqube`
+
 ### Docker Network Check
 
 - `docker network inspect bridge`
@@ -45,6 +51,10 @@ Install ssh-steps plugins
 `Dashboard > Manage Jenkins > Credentials > System > Global credentials (unrestricted) > Add Credentials > Kind (Secret Text) for password of Ubuntu-Train.srv`
 
 `Dashboard > Manage Jenkins > Credentials > System > Global credentials (unrestricted) > Add Credentials > Kind (Secret Text) for password of Nexus.srv`
+
+Install SonarQube
+
+Ref: [SonarQube-Jenkins](https://www.geeksforgeeks.org/how-to-integrate-sonarqube-with-jenkins/)
 
 #### On Ubuntu-Train.srv
 
