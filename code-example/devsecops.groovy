@@ -291,6 +291,9 @@ pipeline {
         stage('Health Check') {
             steps {
                 script {
+                    // Adding a delay of 2 minutes
+                    sleep time: 2, unit: 'MINUTES'
+                    
                     def curlCommand = 'curl -s -o /dev/null -w "%{http_code}" -X POST -H "Content-Type: application/json" -d \'{"text": "Sample text for prediction"}\' ${APP_URL}/predict'
                     echo "Executing curl command: ${curlCommand}"
 
