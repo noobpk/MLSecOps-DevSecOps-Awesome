@@ -1,11 +1,12 @@
 name: MLO-DSO
 on:
-  push:
-    branches:
-      - release
-  # pull_request:
+  # push:
   #   branches:
-  #     - main
+  #     - dev
+  pull_request:
+    branches:
+      - main
+      - release
 jobs:
 
   sast-scan:
