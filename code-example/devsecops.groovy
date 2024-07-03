@@ -3,7 +3,7 @@ pipeline {
 
     environment {
         //Ubuntu-Train
-        SSH_SERVER = '172.17.0.3'
+        SSH_SERVER = '172.17.0.2'
         SSH_USER = 'root'
         CREDENTIALS_ID = '7458c9b4-2e01-4ad5-919f-e5e518f8f3ae'
         IMAGE_DIR = '/tmp/image/'
@@ -13,14 +13,13 @@ pipeline {
         MODEL_FILE = 'text_classification_cnn_model.h5'
         ENCODE_FILE = 'label_encoder.pickle'
         TOKENIZE_FILE = 'tokenizer.pickle'
-        NEXUS_URL = 'http://172.17.0.4:8081/repository/'
+        NEXUS_URL = 'http://172.17.0.3:8081/repository/'
         NEXUS_REPO_PATH_MLOPS = 'mlops/'
         NEXUS_REPO_PATH_DEVSECOPS = 'devsecops/'
-        NEXUS_USERNAME = 'admin'
-        NEXUS_PASSWORD = 'admin'
+        NEXUS_CREDENTIALS_ID = '07967224-9f64-4e00-957c-d699e150a07b'
         IMAGE_EXPORT_FILE = 'text-classification-cnn-model.tar'
         //Ubuntu-Deploy
-        APP_URL = 'http://172.17.0.2:5000'
+        APP_URL = 'http://172.17.0.5:5000'
     }
 
     parameters {
@@ -79,6 +78,23 @@ pipeline {
             }
         }
 
+        // stage('SonarQube Code Analysis') {
+        //     environment {
+        //         scannerHome = tool 'Sonar'
+        //     }
+        //     steps {
+        //         script {
+        //             withSonarQubeEnv('Sonar') {
+        //                 sh "${scannerHome}/bin/sonar-scanner \
+        //                     -Dsonar.projectKey=<project-key> \
+        //                     -Dsonar.projectName=<project-name> \
+        //                     -Dsonar.projectVersion=<project-version> \
+        //                     -Dsonar.sources=<project-path>"
+        //             }
+        //         }
+        //     }
+        // }
+
         stage('Static analysis security testing') {
             steps {
                 script {
@@ -91,7 +107,12 @@ pipeline {
                         remote.password = SSH_PASS
                         remote.allowAnyHosts = true
 
-                        // Install requirements.txt
+                        // Scan with trivy
+                        sshCommand remote: remote, command: """
+                        cd ${GIT_CLONE_DIR}/code-example/docker-image
+                        trivy fs .
+                        """
+                        // Scan with horusec
                         sshCommand remote: remote, command: """
                         curl -fsSL https://raw.githubusercontent.com/ZupIT/horusec/main/deployments/scripts/install.sh | bash -s latest
                         cd ${GIT_CLONE_DIR}/code-example/docker-image
@@ -207,26 +228,28 @@ pipeline {
         stage('Upload Image to Nexus') {
             steps {
                 script {
-                    // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
-                        def remote = [:]
-                        remote.name = 'Ubuntu-Train'
-                        remote.host = SSH_SERVER
-                        remote.user = SSH_USER
-                        remote.password = SSH_PASS
-                        remote.allowAnyHosts = true
+                    withCredentials([usernamePassword(credentialsId: env.NEXUS_CREDENTIALS_ID, usernameVariable: 'NEXUS_USERNAME', passwordVariable: 'NEXUS_PASSWORD')]) {
+                        // Retrieve the password from Jenkins secret text credentials
+                        withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                            def remote = [:]
+                            remote.name = 'Ubuntu-Train'
+                            remote.host = SSH_SERVER
+                            remote.user = SSH_USER
+                            remote.password = SSH_PASS
+                            remote.allowAnyHosts = true
 
-                        // Construct the upload URL
-                        def uploadUrl_0 = "${NEXUS_URL}${NEXUS_REPO_PATH_DEVSECOPS}${env.BUILD_NUMBER}/${IMAGE_EXPORT_FILE}"
+                            // Construct the upload URL
+                            def uploadUrl_0 = "${NEXUS_URL}${NEXUS_REPO_PATH_DEVSECOPS}${env.BUILD_NUMBER}/${IMAGE_EXPORT_FILE}"
 
-                        // Export image and Upload image to nexus
-                        sshCommand remote: remote, command: "mkdir -p ${IMAGE_DIR}"
-                        sshCommand remote: remote, command: """
-                        echo "docker save -o ${IMAGE_DIR}${IMAGE_EXPORT_FILE} text-classification-cnn-model:${currentBuild.number}"
-                        """
-                        sshCommand remote: remote, command: """
-                        echo "curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${IMAGE_DIR}${IMAGE_EXPORT_FILE} ${uploadUrl_0}"
-                        """
+                            // Export image and Upload image to nexus
+                            sshCommand remote: remote, command: "mkdir -p ${IMAGE_DIR}"
+                            sshCommand remote: remote, command: """
+                            echo "docker save -o ${IMAGE_DIR}${IMAGE_EXPORT_FILE} text-classification-cnn-model:${currentBuild.number}"
+                            """
+                            sshCommand remote: remote, command: """
+                            echo "curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${IMAGE_DIR}${IMAGE_EXPORT_FILE} ${uploadUrl_0}"
+                            """
+                        }
                     }
                 }
             }

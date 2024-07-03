@@ -3,9 +3,9 @@ pipeline {
 
     environment {
         //Ubuntu
-        SSH_SERVER = '172.17.0.4'
+        SSH_SERVER = '172.17.0.2'
         SSH_USER = 'root'
-        CREDENTIALS_ID = '7458c9b4-2e01-4ad5-919f-e5e518f8f3ae'
+        SSH_CREDENTIALS_ID = '7458c9b4-2e01-4ad5-919f-e5e518f8f3ae'
         REMOTE_DIR = '/tmp/dataset'
         FILE1_URL = 'http://172.17.0.3:8081/repository/mlops/dataset-evaluation.csv'
         FILE2_URL = 'http://172.17.0.3:8081/repository/mlops/dataset-train.csv'
@@ -21,8 +21,7 @@ pipeline {
         TOKENIZE_FILE = '/tmp/model/tokenizer.pickle'
         NEXUS_URL = 'http://172.17.0.3:8081/repository/'
         NEXUS_REPO_PATH = 'mlops/'
-        NEXUS_USERNAME = 'admin'
-        NEXUS_PASSWORD = 'admin'
+        NEXUS_CREDENTIALS_ID = '07967224-9f64-4e00-957c-d699e150a07b'
     }
 
     stages {
@@ -30,7 +29,7 @@ pipeline {
             steps {
                 script {
                     // Retrieve the password from Jenkins credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                    withCredentials([string(credentialsId: SSH_CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
                         remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
@@ -51,7 +50,7 @@ pipeline {
             steps {
                 script {
                     // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                    withCredentials([string(credentialsId: SSH_CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
                         remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
@@ -78,7 +77,7 @@ pipeline {
             steps {
                 script {
                     // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                    withCredentials([string(credentialsId: SSH_CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
                         remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
@@ -100,7 +99,7 @@ pipeline {
             steps {
                 script {
                     // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                    withCredentials([string(credentialsId: SSH_CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
                         remote.name = 'Ubuntu-Train'
                         remote.host = SSH_SERVER
@@ -132,25 +131,27 @@ pipeline {
         stage('Upload Trained Mode to Nexus') {
             steps {
                 script {
-                    // Retrieve the password from Jenkins secret text credentials
-                    withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
-                        def remote = [:]
-                        remote.name = 'Ubuntu-Train'
-                        remote.host = SSH_SERVER
-                        remote.user = SSH_USER
-                        remote.password = SSH_PASS
-                        remote.allowAnyHosts = true
+                    withCredentials([usernamePassword(credentialsId: env.NEXUS_CREDENTIALS_ID, usernameVariable: 'NEXUS_USERNAME', passwordVariable: 'NEXUS_PASSWORD')]) {
+                        // Retrieve the password from Jenkins secret text credentials
+                        withCredentials([string(credentialsId: SSH_CREDENTIALS_ID, variable: 'SSH_PASS')]) {
+                            def remote = [:]
+                            remote.name = 'Ubuntu-Train'
+                            remote.host = SSH_SERVER
+                            remote.user = SSH_USER
+                            remote.password = SSH_PASS
+                            remote.allowAnyHosts = true
 
-                        // Construct the upload URL
-                        def uploadUrl_0 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/text_classification_cnn_model.h5"
-                        def uploadUrl_1 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/label_encoder.pickle"
-                        def uploadUrl_2 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/tokenizer.pickle"
-                        // Use curl to upload the file to Nexus
-                        sshCommand remote: remote, command: """
-                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${MODEL_FILE} ${uploadUrl_0}
-                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${ENCODE_FILE} ${uploadUrl_1}
-                            curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${TOKENIZE_FILE} ${uploadUrl_2}
-                        """
+                            // Construct the upload URL
+                            def uploadUrl_0 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/text_classification_cnn_model.h5"
+                            def uploadUrl_1 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/label_encoder.pickle"
+                            def uploadUrl_2 = "${NEXUS_URL}${NEXUS_REPO_PATH}${env.BUILD_NUMBER}/tokenizer.pickle"
+                            // Use curl to upload the file to Nexus
+                            sshCommand remote: remote, command: """
+                                curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${MODEL_FILE} ${uploadUrl_0}
+                                curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${ENCODE_FILE} ${uploadUrl_1}
+                                curl -v -u ${NEXUS_USERNAME}:${NEXUS_PASSWORD} --upload-file ${TOKENIZE_FILE} ${uploadUrl_2}
+                            """
+                        }
                     }
                 }
             }
