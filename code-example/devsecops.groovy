@@ -30,7 +30,7 @@ pipeline {
         stage('Fetch Git Repository') {
             steps {
                 script {
-                    git ${GIT_REPO_URL}
+                    git url: ${GIT_REPO_URL}, branch: "main"
                     // Retrieve the password from Jenkins secret text credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
