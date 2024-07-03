@@ -1,0 +1,36 @@
+name: MLO-DSO
+on:
+  # push:
+  #   branches:
+  #     - dev
+  pull_request:
+    branches:
+      - main
+jobs:
+
+  sast-scan:
+    runs-on: ubuntu-latest
+    steps:
+    - name: Self sast-scan
+      uses: AppThreat/sast-scan-action@v1.0.0
+      with:
+        output: reports
+        type: python,bash
+    - name: Upload scan reports
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        name: sast-scan-reports
+        path: reports
+
+  trigger:
+    name: Trigger
+    runs-on: ubuntu-latest
+    needs: sast-scan
+    steps:
+    - name: trigger single Job
+      uses: appleboy/jenkins-action@master
+      with:
+        url: "https://1b8e-113-161-46-78.ngrok-free.app"
+        user: "admin"
+        token: ${{ secrets.JENKINS_API_TOKEN }}
+        job: "MLOps"
