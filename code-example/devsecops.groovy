@@ -87,7 +87,9 @@ pipeline {
                     withSonarQubeEnv('Sonar') {
                         sh "${scannerHome}/bin/sonar-scanner \
                             -Dsonar.projectKey=MLOps-DevSecOps-Awesome \
-                            -Dsonar.projectName=MLOps-DevSecOps-Awesome"
+                            -Dsonar.projectName=MLOps-DevSecOps-Awesome \
+                            -Dsonar.projectVersion=1.0 \
+                            -Dsonar.sources=${GIT_CLONE_DIR}/code-example/docker-image"
                     }
                 }
             }
