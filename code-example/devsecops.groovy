@@ -27,9 +27,10 @@ pipeline {
     }
 
     stages {
-        stage('Clone Git Repository') {
+        stage('Fetch Git Repository') {
             steps {
                 script {
+                    git ${GIT_REPO_URL}
                     // Retrieve the password from Jenkins secret text credentials
                     withCredentials([string(credentialsId: CREDENTIALS_ID, variable: 'SSH_PASS')]) {
                         def remote = [:]
@@ -89,7 +90,7 @@ pipeline {
                             -Dsonar.projectKey=MLOps-DevSecOps-Awesome \
                             -Dsonar.projectName=MLOps-DevSecOps-Awesome \
                             -Dsonar.projectVersion=1.0 \
-                            -Dsonar.sources=${GIT_CLONE_DIR}/code-example/docker-image"
+                            -Dsonar.sources=."
                     }
                 }
             }
