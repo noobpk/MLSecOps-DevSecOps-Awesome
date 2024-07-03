@@ -78,22 +78,20 @@ pipeline {
             }
         }
 
-        // stage('SonarQube Code Analysis') {
-        //     environment {
-        //         scannerHome = tool 'Sonar'
-        //     }
-        //     steps {
-        //         script {
-        //             withSonarQubeEnv('Sonar') {
-        //                 sh "${scannerHome}/bin/sonar-scanner \
-        //                     -Dsonar.projectKey=<project-key> \
-        //                     -Dsonar.projectName=<project-name> \
-        //                     -Dsonar.projectVersion=<project-version> \
-        //                     -Dsonar.sources=<project-path>"
-        //             }
-        //         }
-        //     }
-        // }
+        stage('SonarQube Code Analysis') {
+            environment {
+                scannerHome = tool 'Sonar'
+            }
+            steps {
+                script {
+                    withSonarQubeEnv('Sonar') {
+                        sh "${scannerHome}/bin/sonar-scanner \
+                            -Dsonar.projectKey=MLOps-DevSecOps-Awesome \
+                            -Dsonar.projectName=MLOps-DevSecOps-Awesome"
+                    }
+                }
+            }
+        }
 
         stage('Static analysis security testing') {
             steps {
