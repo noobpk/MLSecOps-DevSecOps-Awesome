@@ -1,8 +1,16 @@
-# MLOps - DevSecOps - Awesome
+# MLSecOps - DevSecOps - Awesome
 
-# Concept
+# Proposed Pipeline
 
-## Prepare for MLOps
+### 💥 MLSecOps Pipeline
+
+![image](https://github.com/user-attachments/assets/cf843f2e-2f75-40e6-afde-4328083f32f6)
+
+### 💥 DevSecOps Pipeline
+
+![image](https://github.com/user-attachments/assets/918de45e-abfe-47ae-8367-ad9718906144)
+
+## Prepare for MLSecOps
 
 ### Setup Jenkins.srv
 
