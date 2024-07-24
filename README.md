@@ -24,7 +24,7 @@ In this repository, you will find:
 
 ### 💥 MLSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/cf843f2e-2f75-40e6-afde-4328083f32f6)
+![image](https://github.com/user-attachments/assets/da731753-0ea2-4292-aa37-013d46e51e76)
 
 ### 💥 DevSecOps Pipeline
 
