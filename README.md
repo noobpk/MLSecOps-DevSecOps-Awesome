@@ -8,7 +8,7 @@
 
 ### 💥 DevSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/918de45e-abfe-47ae-8367-ad9718906144)
+![image](https://github.com/user-attachments/assets/223d4897-ccc2-434c-b31a-ca74a9fbc42f)
 
 ## Prepare for MLSecOps
 
