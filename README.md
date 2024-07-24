@@ -32,18 +32,100 @@ In this repository, you will find:
 
 ## Research papers List
 
-| Public Date | Title | Abstract |  |   |
-|---|---|---|---|---|
-|   |   |   |   |   |
-|   |   |   |   |   |
-|   |   |   |   |   |
 ## Cousers
 
 ## Tools
 
-
-
-
+<table>
+  <thead>
+    <tr>
+      <th>Pipeline</th>
+      <th>Stages</th>
+      <th>Tool</th>
+      <th>Description</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td rowspan="30">MLSecOps</td>
+      <td rowspan="2">Stage 1</td>
+      <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
+      <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
+    </tr>
+    <tr>
+        <td>IDE plugins<br><a href="https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-vulnerability-scanner">Trivy Vulnerability Scanner</a><br><a href="https://marketplace.visualstudio.com/items?itemName=trunk.io">Trunk Check</a>
+      </td>
+        <td><br>Comprehensive vulnerability scanner for containers and other artifacts.<br>Automated Code Quality for Teams: universal formatting, linting, static analysis, and security.</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Stage 2</td>
+        <td><a href="https://aws.amazon.com/s3/">AWS S3 bucket</a></td>
+        <td>A bucket is a container for objects stored in Amazon S3.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Nexus Repository</a></td>
+        <td>Sonatype Nexus Repository</td>
+    </tr>
+    <tr>
+        <td rowspan="6">Stage 3</td>
+        <td><a href="https://gitleaks.io/">Gitleak</a></td>
+        <td>Secret scanner for git repositories, files, and directories.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Sonarqube</a></td>
+        <td>Open-source platform for continuous inspection of code quality.</td>
+    </tr>
+    <tr>
+        <td><a href="https://aquasecurity.github.io/trivy/">Trivy</a></td>
+        <td>Comprehensive vulnerability scanner for containers and other artifacts.</td>
+    </tr>
+    <tr>
+        <td><a href="https://horusec.io/">Horusec</a></td>
+        <td>Tool to perform static code analysis to identify security flaws.</td>
+    </tr>
+    <tr>
+        <td><a href="https://owasp.org/www-project-dependency-check/">OWASP Dependency-Check</a></td>
+        <td>Tool that identifies project dependencies and checks for known vulnerabilities.</td>
+    </tr>
+    <tr>
+        <td><a href="https://nbdefense.ai/">NB Defense</a></td>
+        <td>Security tool for Jupyter notebooks, scanning for vulnerabilities and risks.</td>
+    </tr>
+    <tr>
+    <tr>
+        <td rowspan="2">Stage 4</td>
+        <td><a href="https://keras.io/api/callbacks/early_stopping/">EarlyStopping</a></td>
+        <td>Stop training when a monitored metric has stopped improving.</td>
+    </tr>
+    <tr>
+        <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html">KFold</a></td>
+        <td>K-Fold cross-validator.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 5</td>
+        <td><a href="https://scikit-learn.org/stable/modules/model_evaluation.html">EarlyStopping</a></td>
+        <td>Metrics and scoring: quantifying the quality of predictions.</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Stage 6</td>
+        <td><a href="https://github.com/protectai/modelscan">modelscan</a></td>
+        <td>Protection Against ML Model Serialization Attacks.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/deadbits/vigil-llm">Vigil</a></td>
+        <td>LLM prompt injection and security scanner.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/leondz/garak">Garak</a></td>
+        <td>LLM vulnerability scanner.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 7</td>
+        <td><a href="https://github.com/noobpk/gemini-self-protector">gemini-self-protector</a></td>
+        <td>Gemini - The Runtime Application Self Protection (RASP) Solution Combined With Deep Learning.</td>
+    </tr>
+  </tbody>
+</table>
 
 
 ## Contribution
