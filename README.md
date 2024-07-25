@@ -24,11 +24,11 @@ In this repository, you will find:
 
 ### 💥 MLSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/522921f1-0f7d-469f-a2e4-fdacbc219ac8)
+![image](https://github.com/user-attachments/assets/e3d30164-f793-4031-ac29-819c54477379)
 
 ### 💥 DevSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/7e47e257-3b2f-4bd4-8e08-bf04d6a13cd5)
+![image](https://github.com/user-attachments/assets/e5267da5-9da3-4fca-9cf3-fbbc6cfd829e)
 
 ## Resources
 
@@ -157,7 +157,7 @@ In this repository, you will find:
         <td>Save, serialize, and export models.</td>
     </tr>
     <tr>
-      <td rowspan="30">DevSecOps</td>
+      <td rowspan="22">DevSecOps</td>
       <td rowspan="2">Stage 1</td>
       <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
       <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
@@ -255,6 +255,32 @@ In this repository, you will find:
         <td rowspan="1">Stage 10</td>
         <td><a href="https://github.com/noobpk/gemini-self-protector">gemini-self-protector</a></td>
         <td>Gemini - Runtime Application Self Protection Solution (G-SP).</td>
+    </tr>
+    <tr>
+      <td rowspan="6">Monitor</td>
+      <td rowspan="6">All stage</td>
+      <td><a href="https://api.slack.com/messaging/webhooks">Slack webhook</td>
+      <td>Sending messages using incoming webhooks.</td>
+    </tr>
+    <tr>
+        <td><a href="https://core.telegram.org/bots/api">Telegram Bot</a></td>
+        <td>Telegram Bot API.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.defectdojo.org/">Telegram Bot</a></td>
+        <td>Application vulnerability management tool.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.defectdojo.org/">Telegram Bot</a></td>
+        <td>Application vulnerability management tool.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.elastic.co/elastic-stack">ELK stack</a></td>
+        <td>Elasticsearch, Logstash and Kibana.</td>
+    </tr>
+    <tr>
+        <td><a href="https://grafana.com/">Grafana</a></td>
+        <td>Grafana is the open source analytics & monitoring solution for every database..</td>
     </tr>
   </tbody>
 </table>
