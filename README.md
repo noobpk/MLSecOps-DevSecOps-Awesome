@@ -24,11 +24,11 @@ In this repository, you will find:
 
 ### 💥 MLSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/87d94d44-4816-480e-aa8c-1e095d4b58cb)
+![image](https://github.com/user-attachments/assets/522921f1-0f7d-469f-a2e4-fdacbc219ac8)
 
 ### 💥 DevSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/223d4897-ccc2-434c-b31a-ca74a9fbc42f)
+![image](https://github.com/user-attachments/assets/63aedf4e-6170-46bf-8149-ade70b85cc1d)
 
 ## Research papers List
 
