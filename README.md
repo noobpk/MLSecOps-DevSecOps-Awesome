@@ -32,7 +32,16 @@ In this repository, you will find:
 
 ## Research papers List
 
-## Cousers
+## Community Resources
+
+- [OWASP LLMSVS](https://owasp.org/www-project-llm-verification-standard/)
+- [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+- [OWASP Machine Learning Security Top Ten](https://owasp.org/www-project-machine-learning-security-top-10/)
+- [MITRE ATLAS™ (Adversarial Threat Landscape for Artificial-Intelligence Systems)](https://atlas.mitre.org/)
+- [OWASP DevSecOps](https://devsecops.owasp.org/)
+- [OWASP Devsecops Maturity Model](https://owasp.org/www-project-devsecops-maturity-model/)
+- [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
+- [DevSecOps-Playbook](https://github.com/6mile/DevSecOps-Playbook)
 
 ## Tools
 
@@ -47,7 +56,7 @@ In this repository, you will find:
   </thead>
   <tbody>
     <tr>
-      <td rowspan="30">MLSecOps</td>
+      <td rowspan="20">MLSecOps</td>
       <td rowspan="2">Stage 1</td>
       <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
       <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
@@ -93,7 +102,12 @@ In this repository, you will find:
     </tr>
     <tr>
     <tr>
-        <td rowspan="2">Stage 4</td>
+        <td rowspan="1">Stage 4</td>
+        <td>Quality Gate</td>
+        <td>Define a rule/ policy for test result.</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Stage 5</td>
         <td><a href="https://keras.io/api/callbacks/early_stopping/">EarlyStopping</a></td>
         <td>Stop training when a monitored metric has stopped improving.</td>
     </tr>
@@ -102,12 +116,12 @@ In this repository, you will find:
         <td>K-Fold cross-validator.</td>
     </tr>
     <tr>
-        <td rowspan="1">Stage 5</td>
+        <td rowspan="1">Stage 6</td>
         <td><a href="https://scikit-learn.org/stable/modules/model_evaluation.html">EarlyStopping</a></td>
         <td>Metrics and scoring: quantifying the quality of predictions.</td>
     </tr>
     <tr>
-        <td rowspan="3">Stage 6</td>
+        <td rowspan="3">Stage 7</td>
         <td><a href="https://github.com/protectai/modelscan">modelscan</a></td>
         <td>Protection Against ML Model Serialization Attacks.</td>
     </tr>
@@ -120,9 +134,98 @@ In this repository, you will find:
         <td>LLM vulnerability scanner.</td>
     </tr>
     <tr>
+        <td rowspan="1">Stage 8</td>
+        <td>Quality Gate</td>
+        <td>Define a rule/ policy for test result.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 9</td>
+        <td><a href="https://keras.io/guides/serialization_and_saving/">Save model</a></td>
+        <td>Save, serialize, and export models.</td>
+    </tr>
+    <tr>
+      <td rowspan="30">DevSecOps</td>
+      <td rowspan="2">Stage 1</td>
+      <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
+      <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
+    </tr>
+    <tr>
+        <td>IDE plugins<br><a href="https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-vulnerability-scanner">Trivy Vulnerability Scanner</a><br><a href="https://marketplace.visualstudio.com/items?itemName=trunk.io">Trunk Check</a>
+      </td>
+        <td><br>Comprehensive vulnerability scanner for containers and other artifacts.<br>Automated Code Quality for Teams: universal formatting, linting, static analysis, and security.</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Stage 2</td>
+        <td><a href="https://aws.amazon.com/s3/">AWS S3 bucket</a></td>
+        <td>A bucket is a container for objects stored in Amazon S3.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Nexus Repository</a></td>
+        <td>Sonatype Nexus Repository</td>
+    </tr>
+    <tr>
+        <td rowspan="5">Stage 3</td>
+        <td><a href="https://gitleaks.io/">Gitleak</a></td>
+        <td>Secret scanner for git repositories, files, and directories.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Sonarqube</a></td>
+        <td>Open-source platform for continuous inspection of code quality.</td>
+    </tr>
+    <tr>
+        <td><a href="https://aquasecurity.github.io/trivy/">Trivy</a></td>
+        <td>Comprehensive vulnerability scanner for containers and other artifacts.</td>
+    </tr>
+    <tr>
+        <td><a href="https://horusec.io/">Horusec</a></td>
+        <td>Tool to perform static code analysis to identify security flaws.</td>
+    </tr>
+    <tr>
+        <td><a href="https://owasp.org/www-project-dependency-check/">OWASP Dependency-Check</a></td>
+        <td>Tool that identifies project dependencies and checks for known vulnerabilities.</td>
+    </tr>
+    <tr>
+    <tr>
+        <td rowspan="1">Stage 4</td>
+        <td>Quality Gate</td>
+        <td>Define a rule/ policy for test result.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 5</td>
+        <td><a href="https://docs.docker.com/reference/cli/docker/buildx/build/">Build image</a></td>
+        <td>Docker buildx build.</td>
+    </tr>
+    <tr>
+        <td rowspan="4">Stage 6</td>
+        <td><a href="https://docs.snyk.io/scan-using-snyk/snyk-container/scan-container-images">Synk</a></td>
+        <td>Snyk Container helps you find and fix vulnerabilities in container images, based on container registry scans.</td>
+    </tr>
+    <tr>
+        <td><a href="https://docs.docker.com/scout/">Docker Scount</a></td>
+        <td>Scan docker image.</td>
+    </tr>
+    <tr>
+        <td><a href="https://portswigger.net/burp">Burp Suite</a></td>
+        <td>The class-leading vulnerability scanning, penetration testing, and web app security platform.</td>
+    </tr>
+         <tr>
+        <td><a href="https://www.acunetix.com/">Acunetix</a></td>
+        <td>Acunetix is an end-to-end web security scanner.</td>
+    </tr>
+    <tr>
         <td rowspan="1">Stage 7</td>
+        <td>Quality Gate</td>
+        <td>Define a rule/ policy for test result.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 8</td>
+        <td><a href="https://docs.docker.com/reference/cli/docker/image/save/">Save image</td>
+        <td>Save one or more images to a tar archive .</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 9</td>
         <td><a href="https://github.com/noobpk/gemini-self-protector">gemini-self-protector</a></td>
-        <td>Gemini - The Runtime Application Self Protection (RASP) Solution Combined With Deep Learning.</td>
+        <td>Gemini - Runtime Application Self Protection Solution (G-SP).</td>
     </tr>
   </tbody>
 </table>
