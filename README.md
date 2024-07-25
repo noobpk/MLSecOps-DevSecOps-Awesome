@@ -30,18 +30,28 @@ In this repository, you will find:
 
 ![image](https://github.com/user-attachments/assets/7e47e257-3b2f-4bd4-8e08-bf04d6a13cd5)
 
-## Research papers List
+## Resources
 
-## Community Resources
+### Articles
 
-- [OWASP LLMSVS](https://owasp.org/www-project-llm-verification-standard/)
-- [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
-- [OWASP Machine Learning Security Top Ten](https://owasp.org/www-project-machine-learning-security-top-10/)
-- [MITRE ATLAS™ (Adversarial Threat Landscape for Artificial-Intelligence Systems)](https://atlas.mitre.org/)
-- [OWASP DevSecOps](https://devsecops.owasp.org/)
-- [OWASP Devsecops Maturity Model](https://owasp.org/www-project-devsecops-maturity-model/)
-- [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
-- [DevSecOps-Playbook](https://github.com/6mile/DevSecOps-Playbook)
+### Papers
+
+| Title | Abstract |
+| --- | --- |
+| [Integrating MLSecOps in the Biotechnology Industry 5.0](https://arxiv.org/abs/2402.07967) | Biotechnology Industry 5.0 is advancing with the integration of cutting-edge technologies like Machine Learning (ML), the Internet Of Things (IoT), and cloud computing. It is no surprise that an industry that utilizes data from customers and can alter their lives is a target of a variety of attacks. This chapter provides a perspective of how Machine Learning Security Operations (MLSecOps) can help secure the biotechnology Industry 5.0. The chapter provides an analysis of the threats in the biotechnology Industry 5.0 and how ML algorithms can help secure with industry best practices. This chapter explores the scope of MLSecOps in the biotechnology Industry 5.0, highlighting how crucial it is to comply with current regulatory frameworks. With biotechnology Industry 5.0 developing innovative solutions in healthcare, supply chain management, biomanufacturing, pharmaceuticals sectors, and more, the chapter also discusses the MLSecOps best practices that industry and enterprises should follow while also considering ethical responsibilities. Overall, the chapter provides a discussion of how to integrate MLSecOps into the design, deployment, and regulation of the processes in biotechnology Industry 5.0. |
+| [Security Risks and Best Practices of MLOps: A Multivocal Literature Review](https://ceur-ws.org/Vol-3731/paper13.pdf) | MLOps and tools are designed to streamline the deployment practices and maintenance of production grade ML-enabled systems. As with any software workflow and component, they are susceptible to various security threats. In this paper, we present a Multivocal Literature Review (MLR) aimed at gauging current knowledge of the risks associated with the implementation of MLOps processes and the best practices recommended for their mitigation. By analyzing a varied range of sources of academic papers and non-peer-reviewed technical articles, we synthesize 15 risks and 27 related best practices, which we categorize into 8 themes. We find that while some of the risks are known security threats that can be mitigated through well-established cybersecurity best practices, others represent MLOps-specific risks, mostly related to the management of data and models. |
+| [Backdoor Attacks to Deep Neural Networks: A Survey of the Literature, Challenges, and Future Research Directions](https://ieeexplore.ieee.org/abstract/document/10403914) | Deep neural network (DNN) classifiers are potent instruments that can be used in various security-sensitive applications. Still, they are dangerous to certain attacks that impede or distort their learning process. For example, backdoor attacks involve polluting the DNN learning set with a few samples from one or more source classes, which are then labeled as target classes by an attacker. Even if the DNN is trained on clean samples with no backdoors, this attack will still be successful if a backdoor pattern exists in the training data. Backdoor attacks are difficult to spot and can be used to make the DNN behave maliciously, depending on the target selected by the attacker. In this study, we survey the literature and highlight the latest advances in backdoor attack strategies and defense mechanisms. We finalize the discussion on challenges and open issues, as well as future research opportunities. |
+
+### Tutorials
+
+- 
+- 
+
+### Cousers
+
+- [Practical DevSecOps](https://www.practical-devsecops.com/)
+- [DevSecOps Training](https://www.eccouncil.org/train-certify/certified-devsecops-engineer-ecde/)
+- [DevSecOps : Master Securing CI/CD | DevOps Pipeline |Handson](https://www.udemy.com/course/devsecops/?utm_source=adwords&utm_medium=udemyads&utm_campaign=Search_DSA_Beta_Prof_la.EN_cc.ROW-English&campaigntype=Search&portfolio=ROW-English&language=EN&product=Course&test=&audience=DSA&topic=&priority=Beta&utm_content=deal4584&utm_term=_._ag_162511579564_._ad_696197165427_._kw__._de_c_._dm__._pl__._ti_dsa-1677053911888_._li_9198559_._pd__._&matchtype=&gad_source=1&gclid=CjwKCAjw74e1BhBnEiwAbqOAjOS1FIYA31Sgo8GjmN7B6Gh5pWR_x1yWCZ0ftdx38RLWVytcJiTdzRoCWtgQAvD_BwE&couponCode=2021PM25)
 
 ## Tools
 
@@ -246,6 +256,26 @@ In this repository, you will find:
   </tbody>
 </table>
 
+## Best Practices
+
+- [OWASP LLMSVS](https://owasp.org/www-project-llm-verification-standard/)
+- [OWASP Top 10 for Large Language Model Applications](https://owasp.org/www-project-top-10-for-large-language-model-applications/)
+- [OWASP Machine Learning Security Top Ten](https://owasp.org/www-project-machine-learning-security-top-10/)
+- [MITRE ATLAS™ (Adversarial Threat Landscape for Artificial-Intelligence Systems)](https://atlas.mitre.org/)
+- [OWASP DevSecOps](https://devsecops.owasp.org/)
+- [OWASP Devsecops Maturity Model](https://owasp.org/www-project-devsecops-maturity-model/)
+- [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
+- [DevSecOps-Playbook](https://github.com/6mile/DevSecOps-Playbook)
+
+## Case Studies
+
+- 
+- 
+
+## Community
+
+- 
+- 
 
 ## Contribution
 
