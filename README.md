@@ -28,7 +28,7 @@ In this repository, you will find:
 
 ### 💥 DevSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/63aedf4e-6170-46bf-8149-ade70b85cc1d)
+![image](https://github.com/user-attachments/assets/7e47e257-3b2f-4bd4-8e08-bf04d6a13cd5)
 
 ## Research papers List
 
@@ -164,7 +164,7 @@ In this repository, you will find:
         <td>Sonatype Nexus Repository</td>
     </tr>
     <tr>
-        <td rowspan="5">Stage 3</td>
+        <td rowspan="7">Stage 3</td>
         <td><a href="https://gitleaks.io/">Gitleak</a></td>
         <td>Secret scanner for git repositories, files, and directories.</td>
     </tr>
@@ -185,6 +185,13 @@ In this repository, you will find:
         <td>Tool that identifies project dependencies and checks for known vulnerabilities.</td>
     </tr>
     <tr>
+        <td><a href="https://www.checkov.io/">Checkov</a></td>
+        <td>Checkov scans cloud infrastructure configurations to find misconfigurations.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/terraform-linters/tflint">TFlint</a></td>
+        <td>A Pluggable Terraform Linter.</td>
+    </tr>
     <tr>
         <td rowspan="1">Stage 4</td>
         <td>Quality Gate</td>
@@ -208,7 +215,7 @@ In this repository, you will find:
         <td><a href="https://portswigger.net/burp">Burp Suite</a></td>
         <td>The class-leading vulnerability scanning, penetration testing, and web app security platform.</td>
     </tr>
-         <tr>
+    <tr>
         <td><a href="https://www.acunetix.com/">Acunetix</a></td>
         <td>Acunetix is an end-to-end web security scanner.</td>
     </tr>
@@ -223,7 +230,16 @@ In this repository, you will find:
         <td>Save one or more images to a tar archive .</td>
     </tr>
     <tr>
-        <td rowspan="1">Stage 9</td>
+        <td rowspan="2">Stage 9</td>
+        <td><a href="https://www.tenable.com/products/nessus">Nessus</a></td>
+        <td>Nessus Vulnerability Scanner.</td>
+    </tr>
+    <tr>
+        <td><a href="https://nmap.org/">Nmap</a></td>
+        <td>Security Scanner, Port Scanner, & Network Exploration Tool.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 10</td>
         <td><a href="https://github.com/noobpk/gemini-self-protector">gemini-self-protector</a></td>
         <td>Gemini - Runtime Application Self Protection Solution (G-SP).</td>
     </tr>
