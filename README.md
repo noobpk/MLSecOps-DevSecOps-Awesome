@@ -34,8 +34,11 @@ In this repository, you will find:
 
 ### Articles
 
-- 
-- 
+- [How MLSecOps Can Reshape AI Security](https://www.forbes.com/sites/forbestechcouncil/2023/12/04/how-mlsecops-can-reshape-ai-security/)
+- [MLSecOps Explained: Building Security Into ML & AI](https://www.brighttalk.com/business/products/custom-webinars-sponsorable-events/originals-episode/SBA56-mlsecops-explained-building-security-into-ml-ai)
+- [The Comprehensive Evolution Of DevSecOps In Modern Software Ecosystems](https://www.forbes.com/sites/forbestechcouncil/2024/03/06/the-comprehensive-evolution-of-devsecops-in-modern-software-ecosystems/)
+- [Deploying a Netflix Clone on EKS Using a DevSecOps Pipeline](https://medium.com/@cloudwithmustafa/deploying-a-netflix-clone-on-eks-using-a-devsecops-pipeline-9ef84d5f952b)
+- [DevSecOps (DevOps) Project: Deploying a Petshop Java-Based Application with CI/CD, Docker, and Kubernetes](https://medium.com/@21harsh12/devsecops-devops-project-deploying-a-petshop-java-based-application-with-ci-cd-docker-and-e737d3a5501b)
 
 ### Papers
 
@@ -44,6 +47,7 @@ In this repository, you will find:
 | [Integrating MLSecOps in the Biotechnology Industry 5.0](https://arxiv.org/abs/2402.07967) | Biotechnology Industry 5.0 is advancing with the integration of cutting-edge technologies like Machine Learning (ML), the Internet Of Things (IoT), and cloud computing. It is no surprise that an industry that utilizes data from customers and can alter their lives is a target of a variety of attacks. This chapter provides a perspective of how Machine Learning Security Operations (MLSecOps) can help secure the biotechnology Industry 5.0. The chapter provides an analysis of the threats in the biotechnology Industry 5.0 and how ML algorithms can help secure with industry best practices. This chapter explores the scope of MLSecOps in the biotechnology Industry 5.0, highlighting how crucial it is to comply with current regulatory frameworks. With biotechnology Industry 5.0 developing innovative solutions in healthcare, supply chain management, biomanufacturing, pharmaceuticals sectors, and more, the chapter also discusses the MLSecOps best practices that industry and enterprises should follow while also considering ethical responsibilities. Overall, the chapter provides a discussion of how to integrate MLSecOps into the design, deployment, and regulation of the processes in biotechnology Industry 5.0. |
 | [Security Risks and Best Practices of MLOps: A Multivocal Literature Review](https://ceur-ws.org/Vol-3731/paper13.pdf) | MLOps and tools are designed to streamline the deployment practices and maintenance of production grade ML-enabled systems. As with any software workflow and component, they are susceptible to various security threats. In this paper, we present a Multivocal Literature Review (MLR) aimed at gauging current knowledge of the risks associated with the implementation of MLOps processes and the best practices recommended for their mitigation. By analyzing a varied range of sources of academic papers and non-peer-reviewed technical articles, we synthesize 15 risks and 27 related best practices, which we categorize into 8 themes. We find that while some of the risks are known security threats that can be mitigated through well-established cybersecurity best practices, others represent MLOps-specific risks, mostly related to the management of data and models. |
 | [Backdoor Attacks to Deep Neural Networks: A Survey of the Literature, Challenges, and Future Research Directions](https://ieeexplore.ieee.org/abstract/document/10403914) | Deep neural network (DNN) classifiers are potent instruments that can be used in various security-sensitive applications. Still, they are dangerous to certain attacks that impede or distort their learning process. For example, backdoor attacks involve polluting the DNN learning set with a few samples from one or more source classes, which are then labeled as target classes by an attacker. Even if the DNN is trained on clean samples with no backdoors, this attack will still be successful if a backdoor pattern exists in the training data. Backdoor attacks are difficult to spot and can be used to make the DNN behave maliciously, depending on the target selected by the attacker. In this study, we survey the literature and highlight the latest advances in backdoor attack strategies and defense mechanisms. We finalize the discussion on challenges and open issues, as well as future research opportunities. |
+| [The emergence and importance of DevSecOps: Integrating and reviewing security practices within the DevOps pipeline](https://wjaets.com/content/emergence-and-importance-devsecops-integrating-and-reviewing-security-practices-within) | The emergence of DevSecOps marks a significant paradigm shift in software development, focusing on integrating security practices seamlessly into the DevOps pipeline. This paper explores the evolution, principles, and importance of DevSecOps in contemporary software engineering. DevSecOps arises from the recognition that traditional security measures often lag behind the rapid pace of DevOps development cycles, leading to vulnerabilities and breaches. By integrating security early and continuously throughout the software development lifecycle, DevSecOps aims to proactively identify and mitigate risks without impeding the agility and speed of DevOps practices. This paper delves into the core principles of DevSecOps, emphasizing automation, collaboration, and cultural transformation. Automation streamlines security processes, enabling the automated testing and validation of code for vulnerabilities. Collaboration fosters communication and shared responsibility among developers, operations, and security teams, breaking down silos and promoting a collective approach to security. Cultural transformation involves cultivating a security-first mindset across the organization, where security is not an afterthought but an inherent part of the development process. The importance of DevSecOps cannot be overstated in today's digital landscape, where cyber threats are omnipresent and the cost of security breaches is staggering. By integrating security into every stage of the DevOps pipeline, organizations can enhance their resilience to cyber attacks, comply with regulatory requirements, and build trust with customers.  DevSecOps represents a holistic approach to software development that prioritizes security without compromising speed or innovation. Embracing DevSecOps principles is imperative for organizations seeking to stay ahead in an increasingly complex and hostile digital environment. |
 
 ### Tutorials
 
@@ -365,13 +369,16 @@ In this repository, you will find:
 
 ## Case Studies
 
-- 
-- 
+- [Automating Application Security to Protect Corporate Data Assets at the Speed of Business](https://www.contrastsecurity.com/customer-success/asg-technologies)
+- [Enhancing the GuardRails solution](https://maddevs.io/case-studies/guardrails/)
+- [DevOps in Action: Real-world Case Studies](https://medium.com/@vinodvamanbhat/devops-in-action-real-world-case-studies-db7907149814)
+- [Large scale transformation with DevSecOps](https://www.capacitas.co.uk/ukhsa-case-study)
 
 ## Community
 
-- 
-- 
+- [MLSecOps Community](https://community.mlsecops.com/)
+- [DevSecOps](https://dev.to/t/devsecops)
+- [DevSecCon](https://www.devseccon.com/)
 
 ## Contribution
 
