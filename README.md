@@ -51,8 +51,11 @@ In this repository, you will find:
 
 ### Tutorials
 
-- 
-- 
+- [MLSecOps with Automated Online and Offline ML Model Evaluations on Kubernetes](https://www.youtube.com/watch?v=5WUhmWTMo4g&pp=ygURbWxzZWNvcHMgdHV0b3JpYWw%3D)
+- ["What is MLSecOps?" Building security into MLOps workflows by leveraging DevSecOps principles.](https://www.youtube.com/watch?v=iwPKQbZumN0&pp=ygURbWxzZWNvcHMgdHV0b3JpYWw%3D)
+- [DevSecOps Tutorial for Beginners | CI Pipeline with GitHub Actions and Docker Scout](https://www.youtube.com/watch?v=gLJdrXPn0ns&pp=ygUSZGV2c2Vjb3BzIHR1dG9yaWFs)
+- [DevSecOps Pipeline Project: Deploy Netflix Clone on Kubernetes](https://www.youtube.com/watch?v=g8X5AoqCJHc&pp=ygUSZGV2c2Vjb3BzIHR1dG9yaWFs)
+- [DevSecOps with Jenkins | Boost Your CICD Pipeline Security !!](https://www.youtube.com/watch?v=QUIXJW_h_K0&pp=ygUSZGV2c2Vjb3BzIHR1dG9yaWFs)
 
 ### Cousers
 
