@@ -24,11 +24,11 @@ In this repository, you will find:
 
 ### 💥 MLSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/e3d30164-f793-4031-ac29-819c54477379)
+![image](https://github.com/user-attachments/assets/380354d5-3fd9-415e-8eed-ec547945b6fc)
 
 ### 💥 DevSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/e5267da5-9da3-4fca-9cf3-fbbc6cfd829e)
+![image](https://github.com/user-attachments/assets/dabe6315-e05f-4a3d-8c2a-501b9e329c2d)
 
 ## Resources
 
@@ -69,103 +69,18 @@ In this repository, you will find:
   </thead>
   <tbody>
     <tr>
-      <td rowspan="20">MLSecOps</td>
-      <td rowspan="2">Stage 1</td>
+      <td rowspan="24">MLSecOps</td>
+      <td rowspan="3">Stage 1</td>
       <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
       <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
     </tr>
     <tr>
-        <td>IDE plugins<br><a href="https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-vulnerability-scanner">Trivy Vulnerability Scanner</a><br><a href="https://marketplace.visualstudio.com/items?itemName=trunk.io">Trunk Check</a>
-      </td>
-        <td><br>Comprehensive vulnerability scanner for containers and other artifacts.<br>Automated Code Quality for Teams: universal formatting, linting, static analysis, and security.</td>
+      <td><a href="https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-vulnerability-scanner">Trivy Vulnerability Scanner</a></td>
+      <td>Comprehensive vulnerability scanner for containers and other artifacts.</td>
     </tr>
     <tr>
-        <td rowspan="2">Stage 2</td>
-        <td><a href="https://aws.amazon.com/s3/">AWS S3 bucket</a></td>
-        <td>A bucket is a container for objects stored in Amazon S3.</td>
-    </tr>
-    <tr>
-        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Nexus Repository</a></td>
-        <td>Sonatype Nexus Repository</td>
-    </tr>
-    <tr>
-        <td rowspan="6">Stage 3</td>
-        <td><a href="https://gitleaks.io/">Gitleak</a></td>
-        <td>Secret scanner for git repositories, files, and directories.</td>
-    </tr>
-    <tr>
-        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Sonarqube</a></td>
-        <td>Open-source platform for continuous inspection of code quality.</td>
-    </tr>
-    <tr>
-        <td><a href="https://aquasecurity.github.io/trivy/">Trivy</a></td>
-        <td>Comprehensive vulnerability scanner for containers and other artifacts.</td>
-    </tr>
-    <tr>
-        <td><a href="https://horusec.io/">Horusec</a></td>
-        <td>Tool to perform static code analysis to identify security flaws.</td>
-    </tr>
-    <tr>
-        <td><a href="https://owasp.org/www-project-dependency-check/">OWASP Dependency-Check</a></td>
-        <td>Tool that identifies project dependencies and checks for known vulnerabilities.</td>
-    </tr>
-    <tr>
-        <td><a href="https://nbdefense.ai/">NB Defense</a></td>
-        <td>Security tool for Jupyter notebooks, scanning for vulnerabilities and risks.</td>
-    </tr>
-    <tr>
-    <tr>
-        <td rowspan="1">Stage 4</td>
-        <td>Quality Gate</td>
-        <td>Define a rule/ policy for test result.</td>
-    </tr>
-    <tr>
-        <td rowspan="2">Stage 5</td>
-        <td><a href="https://keras.io/api/callbacks/early_stopping/">EarlyStopping</a></td>
-        <td>Stop training when a monitored metric has stopped improving.</td>
-    </tr>
-    <tr>
-        <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html">KFold</a></td>
-        <td>K-Fold cross-validator.</td>
-    </tr>
-    <tr>
-        <td rowspan="1">Stage 6</td>
-        <td><a href="https://scikit-learn.org/stable/modules/model_evaluation.html">EarlyStopping</a></td>
-        <td>Metrics and scoring: quantifying the quality of predictions.</td>
-    </tr>
-    <tr>
-        <td rowspan="3">Stage 7</td>
-        <td><a href="https://github.com/protectai/modelscan">modelscan</a></td>
-        <td>Protection Against ML Model Serialization Attacks.</td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/deadbits/vigil-llm">Vigil</a></td>
-        <td>LLM prompt injection and security scanner.</td>
-    </tr>
-    <tr>
-        <td><a href="https://github.com/leondz/garak">Garak</a></td>
-        <td>LLM vulnerability scanner.</td>
-    </tr>
-    <tr>
-        <td rowspan="1">Stage 8</td>
-        <td>Quality Gate</td>
-        <td>Define a rule/ policy for test result.</td>
-    </tr>
-    <tr>
-        <td rowspan="1">Stage 9</td>
-        <td><a href="https://keras.io/guides/serialization_and_saving/">Save model</a></td>
-        <td>Save, serialize, and export models.</td>
-    </tr>
-    <tr>
-      <td rowspan="22">DevSecOps</td>
-      <td rowspan="2">Stage 1</td>
-      <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
-      <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
-    </tr>
-    <tr>
-        <td>IDE plugins<br><a href="https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-vulnerability-scanner">Trivy Vulnerability Scanner</a><br><a href="https://marketplace.visualstudio.com/items?itemName=trunk.io">Trunk Check</a>
-      </td>
-        <td><br>Comprehensive vulnerability scanner for containers and other artifacts.<br>Automated Code Quality for Teams: universal formatting, linting, static analysis, and security.</td>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=trunk.io">Trunk Check</a></td>
+        <td>Automated Code Quality for Teams: universal formatting, linting, static analysis, and security.</td>
     </tr>
     <tr>
         <td rowspan="2">Stage 2</td>
@@ -198,12 +113,120 @@ In this repository, you will find:
         <td>Tool that identifies project dependencies and checks for known vulnerabilities.</td>
     </tr>
     <tr>
+        <td><a href="https://nbdefense.ai/">NB Defense</a></td>
+        <td>Security tool for Jupyter notebooks, scanning for vulnerabilities and risks.</td>
+    </tr>
+    <tr>
+        <td>Compliance check</td>
+        <td>PIC/DSS, ISO/IEC 27001, NIST 800-53B, ...</td>
+    </tr>
+    <tr>
+    <tr>
+        <td rowspan="1">Stage 4</td>
+        <td>Quality Gate</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Stage 5</td>
+        <td><a href="https://keras.io/api/callbacks/early_stopping/">EarlyStopping</a></td>
+        <td>Stop training when a monitored metric has stopped improving.</td>
+    </tr>
+    <tr>
+        <td><a href="https://scikit-learn.org/stable/modules/generated/sklearn.model_selection.KFold.html">KFold</a></td>
+        <td>K-Fold cross-validator.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 6</td>
+        <td><a href="https://scikit-learn.org/stable/modules/model_evaluation.html">EarlyStopping</a></td>
+        <td>Metrics and scoring: quantifying the quality of predictions.</td>
+    </tr>
+    <tr>
+        <td rowspan="3">Stage 7</td>
+        <td><a href="https://github.com/protectai/modelscan">modelscan</a></td>
+        <td>Protection Against ML Model Serialization Attacks.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/deadbits/vigil-llm">Vigil</a></td>
+        <td>LLM prompt injection and security scanner.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/leondz/garak">Garak</a></td>
+        <td>LLM vulnerability scanner.</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 8</td>
+        <td>Quality Gate</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 9</td>
+        <td><a href="https://github.com/openpubkey/openpubkey">OpenPubKey</a></td>
+        <td>OpenPubkey is a protocol for leveraging OpenID Providers (OPs) to bind identities to public keys.</td>
+    </tr>    
+    <tr>
+        <td rowspan="2">Stage 10</td>
+        <td><a href="https://aws.amazon.com/s3/">AWS S3 bucket</a></td>
+        <td>A bucket is a container for objects stored in Amazon S3.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Nexus Repository</a></td>
+        <td>Sonatype Nexus Repository</td>
+    </tr>
+    <tr>
+      <td rowspan="31">DevSecOps</td>
+      <td rowspan="3">Stage 1</td>
+      <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
+      <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
+    </tr>
+    <tr>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=AquaSecurityOfficial.trivy-vulnerability-scanner">Trivy Vulnerability Scanner</a></td>
+        <td>Comprehensive vulnerability scanner for containers and other artifacts.</td>
+    </tr>
+    <tr>
+        <td><a href="https://marketplace.visualstudio.com/items?itemName=trunk.io">Trunk Check</a></td>
+        <td>Automated Code Quality for Teams: universal formatting, linting, static analysis, and security.</td>
+    </tr>
+    <tr>
+        <td rowspan="2">Stage 2</td>
+        <td><a href="https://aws.amazon.com/s3/">AWS S3 bucket</a></td>
+        <td>A bucket is a container for objects stored in Amazon S3.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Nexus Repository</a></td>
+        <td>Sonatype Nexus Repository</td>
+    </tr>
+    <tr>
+        <td rowspan="8">Stage 3</td>
+        <td><a href="https://gitleaks.io/">Gitleak</a></td>
+        <td>Secret scanner for git repositories, files, and directories.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Sonarqube</a></td>
+        <td>Open-source platform for continuous inspection of code quality.</td>
+    </tr>
+    <tr>
+        <td><a href="https://aquasecurity.github.io/trivy/">Trivy</a></td>
+        <td>Comprehensive vulnerability scanner for containers and other artifacts.</td>
+    </tr>
+    <tr>
+        <td><a href="https://horusec.io/">Horusec</a></td>
+        <td>Tool to perform static code analysis to identify security flaws.</td>
+    </tr>
+    <tr>
+        <td><a href="https://owasp.org/www-project-dependency-check/">OWASP Dependency-Check</a></td>
+        <td>Tool that identifies project dependencies and checks for known vulnerabilities.</td>
+    </tr>
+    <tr>
         <td><a href="https://www.checkov.io/">Checkov</a></td>
         <td>Checkov scans cloud infrastructure configurations to find misconfigurations.</td>
     </tr>
     <tr>
         <td><a href="https://github.com/terraform-linters/tflint">TFlint</a></td>
         <td>A Pluggable Terraform Linter.</td>
+    </tr>
+    <tr>
+      <td><a href="https://github.com/openpubkey/openpubkey">OpenPubKey</a></td>
+      <td>OpenPubkey is a protocol for leveraging OpenID Providers (OPs) to bind identities to public keys.</td>
     </tr>
     <tr>
         <td rowspan="1">Stage 4</td>
@@ -235,15 +258,28 @@ In this repository, you will find:
     <tr>
         <td rowspan="1">Stage 7</td>
         <td>Quality Gate</td>
-        <td>Define a rule/ policy for test result.</td>
+        <td>N/A</td>
     </tr>
     <tr>
-        <td rowspan="1">Stage 8</td>
-        <td><a href="https://docs.docker.com/reference/cli/docker/image/save/">Save image</td>
-        <td>Save one or more images to a tar archive .</td>
+        <td rowspan="2">Stage 8</td>
+        <td><a href="https://github.com/openpubkey/openpubkey">OpenPubKey</a></td>
+        <td>OpenPubkey is a protocol for leveraging OpenID Providers (OPs) to bind identities to public keys.</td>
     </tr>
+    <tr>
+      <td><a href="https://docs.docker.com/engine/security/trust/#docker-content-trust-keys">Docker content trust key</a></td>
+      <td>Trust for an image tag is managed through the use of signing keys.</td>
+    </tr>    
     <tr>
         <td rowspan="2">Stage 9</td>
+        <td><a href="https://aws.amazon.com/s3/">AWS S3 bucket</a></td>
+        <td>A bucket is a container for objects stored in Amazon S3.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.sonatype.com/products/sonatype-nexus-repository">Nexus Repository</a></td>
+        <td>Sonatype Nexus Repository</td>
+    </tr>
+    <tr>
+        <td rowspan="5">Stage 10</td>
         <td><a href="https://www.tenable.com/products/nessus">Nessus</a></td>
         <td>Nessus Vulnerability Scanner.</td>
     </tr>
@@ -252,12 +288,29 @@ In this repository, you will find:
         <td>Security Scanner, Port Scanner, & Network Exploration Tool.</td>
     </tr>
     <tr>
-        <td rowspan="1">Stage 10</td>
+      <td><a href="https://github.com/openpubkey/openpubkey">OpenPubKey</a></td>
+      <td>OpenPubkey is a protocol for leveraging OpenID Providers (OPs) to bind identities to public keys.</td>
+    </tr>
+    <tr>
+      <td><a href="https://docs.docker.com/engine/security/trust/#docker-content-trust-keys">Docker content trust key</a></td>
+      <td>Trust for an image tag is managed through the use of signing keys.</td>
+    </tr> 
+    <tr>
+        <td>Compliance check</td>
+        <td>PIC/DSS, ISO/IEC 27001, NIST 800-53B, ...</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 11</td>
+        <td>Quality Gate</td>
+        <td>N/A</td>
+    </tr>
+    <tr>
+        <td rowspan="1">Stage 12</td>
         <td><a href="https://github.com/noobpk/gemini-self-protector">gemini-self-protector</a></td>
         <td>Gemini - Runtime Application Self Protection Solution (G-SP).</td>
     </tr>
     <tr>
-      <td rowspan="6">Monitor</td>
+      <td rowspan="6">Monitoring</td>
       <td rowspan="6">All stage</td>
       <td><a href="https://api.slack.com/messaging/webhooks">Slack webhook</td>
       <td>Sending messages using incoming webhooks.</td>
@@ -281,6 +334,20 @@ In this repository, you will find:
     <tr>
         <td><a href="https://grafana.com/">Grafana</a></td>
         <td>Grafana is the open source analytics & monitoring solution for every database..</td>
+    </tr>
+    <tr>
+      <td rowspan="3">Key Management</td>
+      <td rowspan="3">All stage have use key or credential</td>
+      <td><a href="https://www.hashicorp.com/products/vault">HashiCorp Vault</td>
+      <td>Manage access to secrets and stop credentials from falling into the wrong hands with identity-based security.</td>
+    </tr>
+    <tr>
+        <td><a href="https://aws.amazon.com/kms/">AWS Key Management Service</a></td>
+        <td>Create and control keys used to encrypt or digitally sign your data.</td>
+    </tr>
+    <tr>
+        <td><a href="https://aws.amazon.com/secrets-manager/">AWS Key Management Service</a></td>
+        <td>Centrally manage the lifecycle of secrets.</td>
     </tr>
   </tbody>
 </table>
