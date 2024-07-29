@@ -368,7 +368,8 @@ In this repository, you will find:
 - [OWASP DevSecOps](https://devsecops.owasp.org/)
 - [OWASP Devsecops Maturity Model](https://owasp.org/www-project-devsecops-maturity-model/)
 - [OWASP DevSecOps Guideline](https://owasp.org/www-project-devsecops-guideline/)
-- [DevSecOps-Playbook](https://github.com/6mile/DevSecOps-Playbook)
+- [DevSecOps-Playbook-Securestack](https://github.com/6mile/DevSecOps-Playbook)
+- [DevSecOps-Department of Defense (DoD)](https://public.cyber.mil/devsecops/)
 
 ## Case Studies
 
