@@ -24,7 +24,7 @@ In this repository, you will find:
 
 ### 💥 MLSecOps Pipeline
 
-![image](https://github.com/user-attachments/assets/380354d5-3fd9-415e-8eed-ec547945b6fc)
+![image](https://github.com/user-attachments/assets/44ce27e4-5e41-41cf-ad3e-4a22286c54ef)
 
 ### 💥 DevSecOps Pipeline
 
@@ -180,7 +180,7 @@ In this repository, you will find:
         <td>Sonatype Nexus Repository</td>
     </tr>
     <tr>
-      <td rowspan="31">DevSecOps</td>
+      <td rowspan="35">DevSecOps</td>
       <td rowspan="3">Stage 1</td>
       <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
       <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
@@ -203,7 +203,7 @@ In this repository, you will find:
         <td>Sonatype Nexus Repository</td>
     </tr>
     <tr>
-        <td rowspan="8">Stage 3</td>
+        <td rowspan="10">Stage 3</td>
         <td><a href="https://gitleaks.io/">Gitleak</a></td>
         <td>Secret scanner for git repositories, files, and directories.</td>
     </tr>
@@ -232,6 +232,14 @@ In this repository, you will find:
         <td>A Pluggable Terraform Linter.</td>
     </tr>
     <tr>
+        <td><a href="https://terraform-compliance.com/">terraform-compliance</a></td>
+        <td>terraform-compliance is a lightweight, security and compliance focused test framework against terraform to enable negative testing capability for your infrastructure-as-code.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/aquasecurity/tfsec">tfsec</a></td>
+        <td>tfsec uses static analysis of your terraform code to spot potential misconfigurations.</td>
+    </tr>
+    <tr>
       <td><a href="https://github.com/openpubkey/openpubkey">OpenPubKey</a></td>
       <td>OpenPubkey is a protocol for leveraging OpenID Providers (OPs) to bind identities to public keys.</td>
     </tr>
@@ -246,7 +254,7 @@ In this repository, you will find:
         <td>Docker buildx build.</td>
     </tr>
     <tr>
-        <td rowspan="4">Stage 6</td>
+        <td rowspan="5">Stage 6</td>
         <td><a href="https://docs.snyk.io/scan-using-snyk/snyk-container/scan-container-images">Synk</a></td>
         <td>Snyk Container helps you find and fix vulnerabilities in container images, based on container registry scans.</td>
     </tr>
@@ -261,6 +269,10 @@ In this repository, you will find:
     <tr>
         <td><a href="https://www.acunetix.com/">Acunetix</a></td>
         <td>Acunetix is an end-to-end web security scanner.</td>
+    </tr>
+    <tr>
+        <td><a href="https://www.zaproxy.org/">OWASP ZAP</a></td>
+        <td>ZAP is a free and open source web application scanner that can help you find vulnerabilities and test your web applications.</td>
     </tr>
     <tr>
         <td rowspan="1">Stage 7</td>
@@ -286,7 +298,7 @@ In this repository, you will find:
         <td>Sonatype Nexus Repository</td>
     </tr>
     <tr>
-        <td rowspan="5">Stage 10</td>
+        <td rowspan="6">Stage 10</td>
         <td><a href="https://www.tenable.com/products/nessus">Nessus</a></td>
         <td>Nessus Vulnerability Scanner.</td>
     </tr>
@@ -307,6 +319,10 @@ In this repository, you will find:
         <td>PIC/DSS, ISO/IEC 27001, NIST 800-53B, ...</td>
     </tr>
     <tr>
+        <td>OpenSCAP</td>
+        <td>OpenSCAP is an open source project that provides tools and policies for managing system security and standards compliance</td>
+    </tr>
+    <tr>
         <td rowspan="1">Stage 11</td>
         <td>Quality Gate</td>
         <td>N/A</td>
@@ -317,8 +333,8 @@ In this repository, you will find:
         <td>Gemini - Runtime Application Self Protection Solution (G-SP).</td>
     </tr>
     <tr>
-      <td rowspan="6">Monitoring</td>
-      <td rowspan="6">All stage</td>
+      <td rowspan="7">Monitoring</td>
+      <td rowspan="7">All stage</td>
       <td><a href="https://api.slack.com/messaging/webhooks">Slack webhook</td>
       <td>Sending messages using incoming webhooks.</td>
     </tr>
@@ -327,11 +343,7 @@ In this repository, you will find:
         <td>Telegram Bot API.</td>
     </tr>
     <tr>
-        <td><a href="https://www.defectdojo.org/">Telegram Bot</a></td>
-        <td>Application vulnerability management tool.</td>
-    </tr>
-    <tr>
-        <td><a href="https://www.defectdojo.org/">Telegram Bot</a></td>
+        <td><a href="https://www.defectdojo.org/">Deject Dojo</a></td>
         <td>Application vulnerability management tool.</td>
     </tr>
     <tr>
@@ -339,8 +351,16 @@ In this repository, you will find:
         <td>Elasticsearch, Logstash and Kibana.</td>
     </tr>
     <tr>
+        <td><a href="https://www.pagerduty.com/">PagerDuty</a></td>
+        <td>Automate, manage, and improve your operations with over 700 integrations and generative AI.</td>
+    </tr>
+    <tr>
+        <td><a href="https://prometheus.io/">Prometheus</a></td>
+        <td>Power your metrics and alerting with the leading open-source monitoring solution.</td>
+    </tr>
+    <tr>
         <td><a href="https://grafana.com/">Grafana</a></td>
-        <td>Grafana is the open source analytics & monitoring solution for every database..</td>
+        <td>Grafana is the open source analytics & monitoring solution for every database.</td>
     </tr>
     <tr>
       <td rowspan="3">Key Management</td>
@@ -353,7 +373,7 @@ In this repository, you will find:
         <td>Create and control keys used to encrypt or digitally sign your data.</td>
     </tr>
     <tr>
-        <td><a href="https://aws.amazon.com/secrets-manager/">AWS Key Management Service</a></td>
+        <td><a href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a></td>
         <td>Centrally manage the lifecycle of secrets.</td>
     </tr>
   </tbody>
