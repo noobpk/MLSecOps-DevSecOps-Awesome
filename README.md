@@ -80,7 +80,7 @@ Article anlysis this MLO pipeline 👉 []()
   </thead>
   <tbody>
     <tr>
-      <td rowspan="24">MLSecOps</td>
+      <td rowspan="25">MLSecOps</td>
       <td rowspan="3">Stage 1</td>
       <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
       <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
@@ -103,7 +103,7 @@ Article anlysis this MLO pipeline 👉 []()
         <td>Sonatype Nexus Repository</td>
     </tr>
     <tr>
-        <td rowspan="7">Stage 3</td>
+        <td rowspan="8">Stage 3</td>
         <td><a href="https://gitleaks.io/">Gitleak</a></td>
         <td>Secret scanner for git repositories, files, and directories.</td>
     </tr>
@@ -130,6 +130,10 @@ Article anlysis this MLO pipeline 👉 []()
     <tr>
         <td>Compliance check</td>
         <td>PIC/DSS, ISO/IEC 27001, NIST 800-53B, ...</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/ioos/compliance-checker">compliance-checker</a></td>
+        <td>Python tool to check your datasets against compliance standards</td>
     </tr>
     <tr>
     <tr>
@@ -323,7 +327,7 @@ Article anlysis this MLO pipeline 👉 []()
         <td>PIC/DSS, ISO/IEC 27001, NIST 800-53B, ...</td>
     </tr>
     <tr>
-        <td>OpenSCAP</td>
+        <td><a href="https://github.com/OpenSCAP/openscap">OpenSCAP</a></td>
         <td>OpenSCAP is an open source project that provides tools and policies for managing system security and standards compliance</td>
     </tr>
     <tr>
