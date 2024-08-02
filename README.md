@@ -32,7 +32,7 @@ Article anlysis this DSO pipeline 👉 [DevSecOps: A journey to protect your app
 
 ![image](https://github.com/user-attachments/assets/dabe6315-e05f-4a3d-8c2a-501b9e329c2d)
 
-Article anlysis this MLO pipeline 👉 []()
+Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Model (LLM) applications](https://lethanhphuc-pk.medium.com/mlsecops-secure-your-large-language-model-llm-applications-6b60cb25c4fa)
 
 ## Resources
 
