@@ -26,9 +26,13 @@ In this repository, you will find:
 
 ![image](https://github.com/user-attachments/assets/44ce27e4-5e41-41cf-ad3e-4a22286c54ef)
 
+Article anlysis this DSO pipeline 👉 [DevSecOps: A journey to protect your applications](https://lethanhphuc-pk.medium.com/devsecops-a-journey-to-protect-your-applications-fdee7b4700eb)
+
 ### 💥 DevSecOps Pipeline
 
 ![image](https://github.com/user-attachments/assets/dabe6315-e05f-4a3d-8c2a-501b9e329c2d)
+
+Article anlysis this MLO pipeline 👉 []()
 
 ## Resources
 
