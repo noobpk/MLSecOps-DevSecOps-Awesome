@@ -139,7 +139,7 @@ Article anlysis this MLO pipeline 👉 []()
     <tr>
         <td rowspan="1">Stage 4</td>
         <td>Quality Gate</td>
-        <td>N/A</td>
+        <td>Define a rule/ policy for test result.</td>
     </tr>
     <tr>
         <td rowspan="2">Stage 5</td>
@@ -171,7 +171,7 @@ Article anlysis this MLO pipeline 👉 []()
     <tr>
         <td rowspan="1">Stage 8</td>
         <td>Quality Gate</td>
-        <td>N/A</td>
+        <td>Define a rule/ policy for test result.</td>
     </tr>
     <tr>
         <td rowspan="1">Stage 9</td>
