@@ -1,5 +1,5 @@
 Flask==2.3.2
-Flask_Cors==3.0.10
+Flask_Cors==5.0.0
 matplotlib==3.6.2
 numpy==1.23.5
 tensorflow==2.13.0
