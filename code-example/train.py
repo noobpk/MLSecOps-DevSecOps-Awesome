@@ -9,7 +9,7 @@ from sklearn.preprocessing import LabelBinarizer
 from keras.utils import to_categorical
 
 # Load dataset from CSV file
-data = pd.read_csv("dataset-train.csv")
+data = pd.read_csv("/tmp/dataset/dataset-train.csv")
 
 # Assuming the CSV file has columns named 'Sentence' and 'Label'
 texts = data["Sentence"].astype(str).tolist()
