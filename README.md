@@ -156,7 +156,7 @@ Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Mod
         <td>Metrics and scoring: quantifying the quality of predictions.</td>
     </tr>
     <tr>
-        <td rowspan="3">Stage 7</td>
+        <td rowspan="4">Stage 7</td>
         <td><a href="https://github.com/protectai/modelscan">modelscan</a></td>
         <td>Protection Against ML Model Serialization Attacks.</td>
     </tr>
@@ -167,6 +167,10 @@ Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Mod
     <tr>
         <td><a href="https://github.com/leondz/garak">Garak</a></td>
         <td>LLM vulnerability scanner.</td>
+    </tr>
+    <tr>
+        <td><a href="https://github.com/promptfoo/promptfoo">promptfoo</a></td>
+        <td>LLM red teaming and evaluation framework with adversarial attacks.</td>
     </tr>
     <tr>
         <td rowspan="1">Stage 8</td>
