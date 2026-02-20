@@ -375,8 +375,8 @@ Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Mod
         <td>Grafana is the open source analytics & monitoring solution for every database.</td>
     </tr>
     <tr>
-      <td rowspan="3">Key Management</td>
-      <td rowspan="3">All stage have use key or credential</td>
+      <td rowspan="4">Key Management</td>
+      <td rowspan="4">All stage have use key or credential</td>
       <td><a href="https://www.hashicorp.com/products/vault">HashiCorp Vault</td>
       <td>Manage access to secrets and stop credentials from falling into the wrong hands with identity-based security.</td>
     </tr>
@@ -388,6 +388,10 @@ Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Mod
         <td><a href="https://aws.amazon.com/secrets-manager/">AWS Secrets Manager</a></td>
         <td>Centrally manage the lifecycle of secrets.</td>
     </tr>
+    <tr>
+        <td><a href="https://github.com/venkat22022202/black-vault">BlackVault</a></td>
+        <td>Proxy gateway for AI API keys. Agents never see the real key. Kill access instantly..</td>
+    </tr>    
   </tbody>
 </table>
 
