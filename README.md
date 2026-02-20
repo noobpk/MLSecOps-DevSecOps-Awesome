@@ -26,13 +26,13 @@ In this repository, you will find:
 
 ![image](https://github.com/user-attachments/assets/44ce27e4-5e41-41cf-ad3e-4a22286c54ef)
 
-Article anlysis this DSO pipeline 👉 [DevSecOps: A journey to protect your applications](https://lethanhphuc-pk.medium.com/devsecops-a-journey-to-protect-your-applications-fdee7b4700eb)
+Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Model (LLM) applications](https://lethanhphuc-pk.medium.com/mlsecops-secure-your-large-language-model-llm-applications-6b60cb25c4fa)
 
 ### 💥 DevSecOps Pipeline
 
 ![image](https://github.com/user-attachments/assets/dabe6315-e05f-4a3d-8c2a-501b9e329c2d)
 
-Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Model (LLM) applications](https://lethanhphuc-pk.medium.com/mlsecops-secure-your-large-language-model-llm-applications-6b60cb25c4fa)
+Article anlysis this DSO pipeline 👉 [DevSecOps: A journey to protect your applications](https://lethanhphuc-pk.medium.com/devsecops-a-journey-to-protect-your-applications-fdee7b4700eb)
 
 ## Resources
 
@@ -80,7 +80,7 @@ Article anlysis this MLO pipeline 👉 [MLSECOPS: Secure your Large Language Mod
   </thead>
   <tbody>
     <tr>
-      <td rowspan="25">MLSecOps</td>
+      <td rowspan="26">MLSecOps</td>
       <td rowspan="3">Stage 1</td>
       <td><a href="https://pre-commit.com/">Pre-Commit Hook Scans</td>
       <td>A framework for managing and maintaining multi-language pre-commit hooks.</td>
